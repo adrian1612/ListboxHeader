@@ -72,11 +72,14 @@ namespace ListboxHeader
             return true;
         }
 
-        public DataTable query(string command, Dictionary<string,object> parameters)
+        public DataTable query(string command, Dictionary<string,object> parameters = null)
         {
-            foreach (KeyValuePair<string,object> d in parameters)
+            if (parameters != null)
             {
-                p($"{d.Key}", d.Value);
+                foreach (KeyValuePair<string, object> d in parameters)
+                {
+                    p($"{d.Key}", d.Value);
+                }
             }
             q(command);
             return dt;
