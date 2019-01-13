@@ -53,8 +53,8 @@ namespace ListboxHeader
 
         private void btninsert_Click(object sender, EventArgs e)
         {
-            s.query("insert into tbluser ([user],pass,fname,mn,lname) values (@user,@pass,@fname,@mn,@lname)", new Dictionary<string, object> {
-                 {"@user",txtuser.Text}, {"@pass",txtpass.Text}, {"@fname",txtfname.Text},
+            s.query("insert into tbluser (usr,pwd,fname,mn,lname) values (@usr,@pwd,@fname,@mn,@lname)", new Dictionary<string, object> {
+                 {"@usr",txtuser.Text}, {"@pwd",txtpass.Text}, {"@fname",txtfname.Text},
                  {"@mn",txtmn.Text}, {"@lname",txtlname.Text}});
             if (s.checkError(true))
             {
